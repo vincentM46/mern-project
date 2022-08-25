@@ -1,12 +1,13 @@
-import BlogPosts from "../components/BlogPosts";
+import BlogPost from "../components/BlogPost";
 import Header from "../components/Header";
 
 function HomePage() {
     return (
         <div>
             <Header/>
-            <div className="homePage">
-                <BlogPosts/>
+            <div className="blogBox">
+                <BlogPost/>
+                <BlogPost/>
             </div>
         </div>
     )

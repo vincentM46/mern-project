@@ -1,21 +1,32 @@
+import { Link } from 'react-router-dom';
 import cat from '../images/cat.png';
 
 function Navbar() {
     return (
         <div className="navbar">
             <div className="Logo">
-                <i className="lego fa-brands fa-linkedin"></i>
-                <i className="lego fa-brands fa-square-instagram"></i>
-                <i className="lego fa-brands fa-square-github"></i>
-                <i className="lego fa-brands fa-facebook"></i>
+                <Link className="link" to="/">
+                    <i class="bigLego fa-solid fa-house"/>
+                </Link>
             </div>
             <div className="nav">
                 <ul className="navList">
-                    <li className="navItems">HOME</li>
-                    <li className="navItems">ABOUT</li>
-                    <li className="navItems">COOL</li>
-                    <li className="navItems">POST</li>
-                    <li className="navItems">LOGOUT</li>
+                    <li className="navItems">
+                        <Link className="link" to="/AboutPage">
+                            ABOUT
+                        </Link>
+                    </li>
+                    <li className="navItems">
+                        <Link className="link" to="/CoolPage">
+                            COOL
+                        </Link>
+                    </li>
+                    <li className="navItems">
+                        <Link className="link" to="/Post">
+                            POST
+                        </Link>
+                    </li>
+                    <li className="navItems">SIGN OUT</li>
                 </ul>
             </div>
             <div className="user">
