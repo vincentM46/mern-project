@@ -158,3 +158,25 @@
   cursor: pointer;
   font-size: 20px;
 }
+.link {
+  box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.4);
+  text-decoration: none;
+}
+.link nav a {
+  transition: all 0.4s;
+}
+.link nav a:hover {
+  background: #00bcd1;
+  border-bottom-width: 3px;
+  border-bottom: 3px solid #1a237e;
+  color: red;
+}
+.link nav .active {
+  background-color: #8100d1;
+  border-bottom-width: 3px;
+  border-bottom-color: #1a237e;
+}
+.footer {
+  margin-bottom: auto;
+  position: sticky;
+}
