@@ -1,6 +1,15 @@
+body {
+  background:#f3f3f3;
+}
 .App {
   text-align: center;
-}
+    /* height: fill;
+    background-color: red;
+    background-image:
+      linear-gradient(
+        rgb(212, 102, 102), #385ab8, rgb(86, 18, 68)
+      ); */
+  }
 .navbar {
   display: flex;
   align-items: center;
@@ -178,7 +187,11 @@
 }
 .footer {
   margin-bottom: auto;
-  position: sticky;
+  position: absolute;
+  bottom: 0;
+  width: 100;
+  align-items: center;
+  height: 2.5rem;
 }
 .randomAdviceBox {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
@@ -190,4 +203,90 @@
   padding: 175px;
   border: solid red;
   background: blue;
+}
+.login {
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loginTop {
+  font-size: 50px;
+}
+
+.loginForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.loginForm > label {
+  margin: 10px 0;
+}
+
+.loginText {
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.loginInput:focus {
+  outline: none;
+}
+
+.loginButton {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: lightcoral;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
+}
+.register {
+  height: calc(100vh - 75px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.registerTop {
+  font-size: 50px;
+}
+
+.registerForm {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.registerForm > label {
+  margin: 10px 0;
+}
+
+.registerText {
+  padding: 10px;
+  background-color: white;
+  border: none;
+  border-radius: 10px;
+}
+
+.registerInput:focus {
+  outline: none;
+}
+
+.registerButton2 {
+  margin-top: 20px;
+  cursor: pointer;
+  background-color: lightcoral;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  text-align: center;
 }
