@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js --ignore client"
+    "test": "echo \"Error: no test specificed\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

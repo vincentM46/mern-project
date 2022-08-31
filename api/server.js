@@ -5,9 +5,10 @@ const mongoose = require('mongoose');
 const authenticationRoute = require("./routes/authentication");
 const usersRoute = require("./routes/users");
 const postsRoute = require("./routes/posts");
-const categoriesRoute = require("./routes/categories");
+// const categoriesRoute = require("./routes/categories");
 const multer = require('multer');
 const path = require("path");
+const PORT = process.env.PORT || 5000;
 
 
 dotenv.config();
@@ -15,8 +16,9 @@ app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
 const LOCAL_URI = "mongodb://127.0.0.1:27017/mernproject"
+const MONGO_URL = "mongodb+srv://vincem46:mernproject@cluster0.37rgcf7.mongodb.net/test"
 
-mongoose.connect(process.env.MONGO_URL, {
+mongoose.connect(MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
 }).then(console.log("Connected to MONGODB")).catch(err => console.log(err));
@@ -36,12 +38,12 @@ app.post("/api/upload", uploadImage.single("file"), (req, res) => {
 app.use("/api/authentication", authenticationRoute);
 app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
-app.use("/api/categories", categoriesRoute);
+// app.use("/api/categories", categoriesRoute);
 
-app.listen(5000, () => {
-    console.log(`Express server listening on port 5000`)
+app.listen(PORT, () => {
+    console.log(`Express server listening on port ${PORT}`)
 });
 
 app.use('/', (req, res) => {
-    res.send('This is the root')
+    res.send('This is the Blog Database')
 });
