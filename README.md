@@ -12,11 +12,11 @@ netlify link: https://vm-mernstack-project.netlify.app/
 
  The blog features extensive routing and logic used to handle a multitude of callback functions to allow full utilization of the backend api.
 
-##Full Component Hierarchy
+## Full Component Hierarchy
 
 ![merndiagram](https://user-images.githubusercontent.com/105744102/187681422-fcb0a9bb-76a3-44cd-92ac-cb4eb3f79e53.png)
 
-##Wireframing
+## Wireframing
 
 Home Page Top:![wireframe one](https://user-images.githubusercontent.com/105744102/187682233-8d25aa4c-0864-40a3-9969-235f6269702b.png)
 
@@ -35,16 +35,16 @@ Create Post Page: ![wireframe seven](https://user-images.githubusercontent.com/1
 Created Post Page: ![wireframe eight](https://user-images.githubusercontent.com/105744102/187682600-a0e591d6-3288-433e-bd9c-91f901ce8f51.png)
 
 
-##MVP
+## VP
 
-#The develop app is able to register and login users with hashed passwords, create, update, delete posts, and make Random Advice API calls!
-
-
-##SWOT
-
-#The build is not fully finished- images do not properly process and some styling still needs to be done to make it look better and more polished
+# The develop app is able to register and login users with hashed passwords, create, update, delete posts, and make Random Advice API calls!
 
 
-##POST-MVP
+## SWOT
 
-#I plan to completely finish the website, as it will definitely be going onto my portfolio as an example of the progress I have made throughout my journey of Software Engineering.
+# The build is not fully finished- images do not properly process and some styling still needs to be done to make it look better and more polished
+
+
+## POST-MVP
+
+# I plan to completely finish the website, as it will definitely be going onto my portfolio as an example of the progress I have made throughout my journey of Software Engineering.
