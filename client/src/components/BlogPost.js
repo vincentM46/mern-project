@@ -1,18 +1,29 @@
-import cat from '../images/cat.png';
+import { Link } from 'react-router-dom';
 
-function BlogPost() {
+function BlogPost({post}) {
+    const PF = "localhost:5000/images/"
     return (
         <div className="blogPost">
-            <img className="blogImage" alt="" src={cat}/>
+            {post.photo && (
+                <img className="blogImage" src={PF + post.postImage} alt="" />
+            )}
             <div className="blogInfo">
                 <div className="blogTags">
-                    <span>Music</span>
-                    <span>Life</span>
+                    {post.categories.map((c) => (
+                    <span>
+                        {c.name}
+                    </span>
+                    ))}
                 </div>
-                <span className="blogTitle">asdfsafsaoidfsaofasofa</span>
+                <Link className="link" to={`/post/${post._id}`}>
+                    <span className="blogTitle">
+                        {post.title}
+                    </span>
+                </Link>
                 <hr/>
-                <span className="blogTime">1 hour ago</span>
-                <p className="blogContent">Lorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfasLorem ipsum asdfasdfasfasdfas</p>
+                <img src ={PF + post.postImage} alt=""/>
+                <span className="blogTime">{post.createdAt}</span>
+                <p className="blogContent">{post.content}</p>
             </div>
         </div>
     )

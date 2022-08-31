@@ -4,14 +4,17 @@ import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage'
 import CoolPage from './pages/CoolPage';
 import Post from './pages/Post';
-import ErrorPage from './pages/ErrorPage';
+// import ErrorPage from './pages/ErrorPage';
+import OnePost from './components/OnePost';
 import Footer from './components/Footer';
 import { Routes, Route } from 'react-router-dom';
 import LoginPage from './pages/LoginPage';
 import RegisterUserPage from './pages/RegisterUserPage';
-
+import { useContext } from 'react';
+import { Context } from './context/Context';
 
 function App() {
+  const { user } = useContext(Context)
   return (
     <div className="App">
       <Navbar/>
@@ -19,10 +22,11 @@ function App() {
         <Route path="/" element={<HomePage/>}/>
         <Route path="/AboutPage" element={<AboutPage/>}/>
         <Route path="/CoolPage" element={<CoolPage/>}/>
-        <Route path="/Post" element={<Post/>}/>
-        <Route path="/Login" element={<LoginPage/>}/>
-        <Route path="/Register" element={<RegisterUserPage/>}/>
-        <Route path="*" element={<ErrorPage/>}/>
+        <Route path="/Post" element={user ? <Post/> : <RegisterUserPage/>}/>
+        <Route path="/Login" element={user ? <HomePage/> : <LoginPage/>}/>
+        <Route path="/Register" element={user ? <HomePage/> : <RegisterUserPage/>}/>
+        {/* <Route path="*" element={<ErrorPage/>}/> */}
+        <Route path="*" element={<OnePost/>}/>
       </Routes>
       <Footer/>
     </div>

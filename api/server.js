@@ -1,5 +1,4 @@
 const express = require('express');
-const PORT = process.env.PORT || 3000;
 const app = express();
 const dotenv = require('dotenv');
 const mongoose = require('mongoose');
@@ -8,10 +7,12 @@ const usersRoute = require("./routes/users");
 const postsRoute = require("./routes/posts");
 const categoriesRoute = require("./routes/categories");
 const multer = require('multer');
+const path = require("path");
 
 
 dotenv.config();
 app.use(express.json());
+app.use("/images", express.static(path.join(__dirname, "/images")))
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
@@ -20,7 +21,7 @@ mongoose.connect(process.env.MONGO_URL, {
 
 const imageStorage = multer.diskStorage({ destination: (req, file, cb) => {
     cb(null, "images");
-}, filename: (req, file, cb) => {
+}, fileName: (req, file, cb) => {
         cb(null, req.body.name);
     },
 });
@@ -35,8 +36,8 @@ app.use("/api/users", usersRoute);
 app.use("/api/posts", postsRoute);
 app.use("/api/categories", categoriesRoute);
 
-app.listen(PORT, () => {
-    console.log(`Express server listening on port ${PORT}`)
+app.listen(5000, () => {
+    console.log(`Express server listening on port 5000`)
 });
 
 app.use('/', (req, res) => {

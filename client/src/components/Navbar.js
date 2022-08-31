@@ -1,7 +1,14 @@
 import { Link } from 'react-router-dom';
 import cat from '../images/cat.png';
+import { useContext } from 'react';
+import { Context } from '../context/Context';
 
 function Navbar() {
+    const { user, dispatch } = useContext(Context);
+    const PF = "http://localhost:5000/images/"
+    const handleLogout = () => {
+        dispatch({ type: "LOGOUT" })
+    }
     return (
         <div className="navbar">
             <div className="Logo">
@@ -26,12 +33,34 @@ function Navbar() {
                             POST
                         </Link>
                     </li>
-                    <li className="navItems">SIGN OUT</li>
-                </ul>
-            </div>
-            <div className="user">
-                <img className="userImage" alt="" src={cat}/>
-                <i className="searchUser fa-solid fa-magnifying-glass"></i>
+                    {/* <li className="navItems">
+                        <Link className="link" to="/Discover">
+                            Discover
+                        </Link>
+                    </li> */}
+                    <li className="navItems" onClick={handleLogout}>
+                        {user && "LOGOUT"}
+                    </li>
+                    </ul>
+                    {user ? (
+                    <div className="user">
+                        <img className="userImage" alt="" src={cat}/>
+                        <i className="searchUser fa-solid fa-magnifying-glass"></i>
+                    </div>
+                    ) : (
+                        <ul className="navList">
+                        <li className="navItems">
+                            <Link className="link" to="/Register">
+                                Register
+                            </Link>
+                        </li>
+                        <li className="navItems">
+                            <Link className="link" to="/Login">
+                                Login
+                            </Link>
+                        </li>
+                        </ul>
+                    )}
             </div>
         </div>
     )
