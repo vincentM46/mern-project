@@ -14,6 +14,8 @@ dotenv.config();
 app.use(express.json());
 app.use("/images", express.static(path.join(__dirname, "/images")))
 
+const LOCAL_URI = "mongodb://127.0.0.1:27017/mernproject"
+
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
