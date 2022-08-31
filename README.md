@@ -1,6 +1,6 @@
 ## This is my project for the MERN stack application; my own Blog!
 
-netlify link: https://fascinating-kleicha-87b6a4.netlify.app/AboutPage
+netlify link: https://vm-mernstack-project.netlify.app/
 
 # I steadily worked on and developed this project by using both the tools and knowledge I've gained through the PerScholas Software Engineering course, as well as utilizing various other educational materials such as StackOverflow, YouTube, codecademy, etc.
 
