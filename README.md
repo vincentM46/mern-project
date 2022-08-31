@@ -1,5 +1,7 @@
 ## This is my project for the MERN stack application; my own Blog!
 
+netlify link: https://fascinating-kleicha-87b6a4.netlify.app/AboutPage
+
 # I steadily worked on and developed this project by using both the tools and knowledge I've gained through the PerScholas Software Engineering course, as well as utilizing various other educational materials such as StackOverflow, YouTube, codecademy, etc.
 
 # The project itself utilizies various dependencies, such as Node.js, MongoDB/Mongoose, Express.js, and React.js.
