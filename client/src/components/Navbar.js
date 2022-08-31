@@ -45,7 +45,6 @@ function Navbar() {
                     {user ? (
                     <div className="user">
                         <img className="userImage" alt="" src={cat}/>
-                        <i className="searchUser fa-solid fa-magnifying-glass"></i>
                     </div>
                     ) : (
                         <ul className="navList">
